@@ -1,26 +1,14 @@
 #!/bin/bash
 #This script uses pre-processed brain fMRI data and and creates a general linear model using AFNI.
 
-# Sample code to run this script below:
-# input_file=${parent_dir}/BIDS/derivatives/${subject}/func/${task}/output.SPC/${subject}_${task}_SPC.nii.gz
-# motion_file=${parent_dir}/BIDS/derivatives/${subject}/func/${task}/output.mc/${subject}_${task}_rm10_1_mc_demean.1D
-# Rgrip_file=${parent_dir}/Other/HGDev_${subject}/HGDev_${subject}_MOTOR_RGrip_HRFconv.txt
-# Lgrip_file=${parent_dir}/Other/HGDev_${subject}/HGDev_${subject}_MOTOR_LGrip_HRFconv.txt
-# sub_ID=HGDev_${subject}_${task}
-# output_dir=${parent_dir}/BIDS/derivatives/${subject}/func/${task}/output.GLM_REML_OC_${version}
-#
-# ./x.GLM_REML.sh ${input_file} ${motion_file} ${Rgrip_file} ${Lgrip_file} ${sub_ID} ${output_dir}
-
-# bash /mnt/j/ANVIL/NettaData/x.GLM_REML.sh
-
 #Check if the inputs are correct
 if [ $# -ne 6 ]
 then
   echo "Insufficient inputs"
   echo "Input 1 should be the fMRI data you want to model"
   echo "Input 2 should be the demeaned motion parameters"
-  echo "Input 3 should be the demeaned high force trace"
-  echo "Input 4 should be the demeaned medium force trace"
+  echo "Input 3 should be the binary force regressor"
+  echo "Input 4 should be the nonbinary force regressor"
   echo "Input 5 should be the subject ID"
   echo "Input 6 should be the output directory"
   exit

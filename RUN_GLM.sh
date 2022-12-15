@@ -3,8 +3,6 @@
 
 #version?
 parent_dir2="mnt/j/ANVIL/NettaData"
-# subject="sub-05"	#sub-04 	sub-05
-# task="TASK2"	#TASK2
 
 for subject in sub-01_2 sub-02 sub-03 sub-04 sub-05; do
 	for task in TASK1 TASK2; do
